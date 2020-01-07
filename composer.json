@@ -11,6 +11,9 @@
   ],
   "type": "symfony-bundle",
   "license": "MIT",
+  "conflict": {
+    "auxmoney/opentracing-bundle-jaeger": "*"
+  },
   "require": {
     "php": "^7.1.33",
     "auxmoney/opentracing-bundle-core": "dev-initial-release",
