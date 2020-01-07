@@ -1,0 +1,6 @@
+{
+  "name": "auxmoney/opentracing-bundle-zipkin",
+  "type": "symfony-bundle",
+  "license": "MIT",
+  "require": {}
+}
