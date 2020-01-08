@@ -14,7 +14,7 @@ use Zipkin\Samplers\BinarySampler;
 use Zipkin\TracingBuilder;
 use ZipkinOpenTracing\Tracer as ZipkinTracer;
 
-class ZipkinTracerFactory implements TracerFactory
+final class ZipkinTracerFactory implements TracerFactory
 {
     private $logger;
 
