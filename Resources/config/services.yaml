@@ -1,0 +1,11 @@
+parameters:
+  env(AUXMONEY_OPENTRACING_AGENT_PORT): '9411'
+
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Auxmoney\OpentracingBundle\Factory\TracerFactory:
+    class: Auxmoney\OpentracingBundle\Factory\ZipkinTracerFactory
