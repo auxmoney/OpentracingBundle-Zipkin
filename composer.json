@@ -2,11 +2,12 @@
   "name": "auxmoney/opentracing-bundle-zipkin",
   "description": "Symfony Opentracing bundle extension for Zipkin tracers",
   "keywords": [
+    "auxmoney",
     "opentracing",
+    "opentracing-bundle",
     "symfony",
-    "bundle",
-    "distributed",
-    "tracing",
+    "symfony-bundle",
+    "distributed-tracing",
     "zipkin"
   ],
   "type": "symfony-bundle",
@@ -16,9 +17,9 @@
   },
   "require": {
     "php": "^7.1.33",
-    "auxmoney/opentracing-bundle-core": "dev-initial-release",
-    "jcchavezs/zipkin-opentracing": "^0.1",
-    "opentracing/opentracing": "1.0.0-beta5@beta"
+    "auxmoney/opentracing-bundle-core": "^0.3",
+    "opentracing/opentracing": "1.0.0-beta5@beta",
+    "jcchavezs/zipkin-opentracing": "^0.1"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
