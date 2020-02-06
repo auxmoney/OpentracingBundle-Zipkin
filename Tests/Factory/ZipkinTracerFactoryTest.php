@@ -36,7 +36,7 @@ class ZipkinTracerFactoryTest extends TestCase
 
     public function testCreateSuccess(): void
     {
-        $this->agentHostResolver->resolveAgentHost('localhost')->shouldBeCalled();
+        $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled();
         $this->logger->warning(Argument::type('string'))->shouldNotBeCalled();
 
         self::assertInstanceOf(Tracer::class, $this->subject->create($this->projectName, $this->agentHost, $this->agentPort));
@@ -44,7 +44,7 @@ class ZipkinTracerFactoryTest extends TestCase
 
     public function testCreateResolvingFailed(): void
     {
-        $this->agentHostResolver->resolveAgentHost('localhost')->shouldBeCalled()->willThrow(new RuntimeException('resolving failer'));
+        $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled()->willThrow(new RuntimeException('resolving failer'));
         $this->logger->warning(Argument::containingString('resolving failer'))->shouldBeCalledOnce();
 
         self::assertInstanceOf(

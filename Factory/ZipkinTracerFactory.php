@@ -33,7 +33,7 @@ final class ZipkinTracerFactory implements TracerFactory
         $tracer = new NoopTracer();
 
         try {
-            $this->agentHostResolver->resolveAgentHost($agentHost);
+            $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $endpoint = Endpoint::create($projectName, gethostbyname($agentHost), null, (int) $agentPort);
             $reporter = new Http();
             $sampler = BinarySampler::createAsAlwaysSample();
