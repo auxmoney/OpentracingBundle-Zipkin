@@ -17,9 +17,11 @@ use ZipkinOpenTracing\Tracer as ZipkinTracer;
 final class ZipkinTracerFactory implements TracerFactory
 {
     private $logger;
+    private $agentHostResolver;
 
-    public function __construct(LoggerInterface $logger)
+    public function __construct(AgentHostResolver $agentHostResolver, LoggerInterface $logger)
     {
+        $this->agentHostResolver = $agentHostResolver;
         $this->logger = $logger;
     }
 
@@ -30,12 +32,8 @@ final class ZipkinTracerFactory implements TracerFactory
     {
         $tracer = new NoopTracer();
 
-        if (!dns_get_record($agentHost) && !filter_var($agentHost, FILTER_VALIDATE_IP)) {
-            $this->logger->warning(self::class . ': could not resolve agent host "' . $agentHost . '"');
-            return $tracer;
-        }
-
         try {
+            $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $endpoint = Endpoint::create($projectName, gethostbyname($agentHost), null, (int) $agentPort);
             $reporter = new Http();
             $sampler = BinarySampler::createAsAlwaysSample();
