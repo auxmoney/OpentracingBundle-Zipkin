@@ -32,7 +32,10 @@ class FunctionalTest extends TestCase
         $p = new Process(['docker', 'start', 'zipkin']);
         $p->mustRun();
 
-        sleep(3);
+        sleep(10);
+
+        $p = new Process(['netstat', '-nltp']);
+        $p->mustRun();
     }
 
     protected function tearDown()
