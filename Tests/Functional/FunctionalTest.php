@@ -33,9 +33,6 @@ class FunctionalTest extends TestCase
         $p->mustRun();
 
         sleep(10);
-
-        $p = new Process(['netstat', '-nltp']);
-        $p->mustRun();
     }
 
     protected function tearDown()
