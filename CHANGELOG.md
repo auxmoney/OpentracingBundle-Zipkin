@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.3.3](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.3.2...v0.3.3) (2020-03-06)
+
+
+### Features
+
+* add functional tests ([#5](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/5)) ([9719f29](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/9719f29c1e9b7d8d6a673993811a53bcc3ed9648))
+
 ### [0.3.2](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.3.1...v0.3.2) (2020-02-06)
 
 
