@@ -1,5 +1,7 @@
 parameters:
   env(AUXMONEY_OPENTRACING_AGENT_PORT): '9411'
+  env(AUXMONEY_OPENTRACING_SAMPLER_CLASS): Zipkin\Samplers\BinarySampler
+  env(AUXMONEY_OPENTRACING_SAMPLER_VALUE): 'true'
 
 services:
   _defaults:
