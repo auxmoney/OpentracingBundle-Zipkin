@@ -9,7 +9,7 @@ use Zipkin\Sampler;
 use Zipkin\Samplers\BinarySampler;
 use Zipkin\Samplers\PercentageSampler;
 
-class ZipkinSamplerFactory implements SamplerFactory
+final class ZipkinSamplerFactory implements SamplerFactory
 {
     /**
      * @inheritDoc
