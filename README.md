@@ -1,5 +1,6 @@
 # auxmoney OpentracingBundle - Zipkin
 
+![release](https://github.com/auxmoney/OpentracingBundle-Zipkin/workflows/release/badge.svg)
 ![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/auxmoney/OpentracingBundle-Zipkin)
 ![Travis (.org)](https://img.shields.io/travis/auxmoney/OpentracingBundle-Zipkin)
 ![Coveralls github](https://img.shields.io/coveralls/github/auxmoney/OpentracingBundle-Zipkin)
