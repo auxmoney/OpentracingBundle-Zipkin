@@ -11,3 +11,6 @@ services:
 
   Auxmoney\OpentracingBundle\Factory\TracerFactory:
     class: Auxmoney\OpentracingBundle\Factory\ZipkinTracerFactory
+
+  Auxmoney\OpentracingBundle\Factory\SamplerFactory:
+    class: Auxmoney\OpentracingBundle\Factory\ZipkinSamplerFactory
