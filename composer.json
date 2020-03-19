@@ -18,7 +18,8 @@
   },
   "require": {
     "php": "^7.1.33",
-    "auxmoney/opentracing-bundle-core": "^0.4.0",
+    "ext-json": "*",
+    "auxmoney/opentracing-bundle-core": "^0.5",
     "opentracing/opentracing": "1.0.0-beta5@beta",
     "jcchavezs/zipkin-opentracing": "^0.1"
   },

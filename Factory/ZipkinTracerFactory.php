@@ -10,7 +10,6 @@ use OpenTracing\Tracer;
 use Psr\Log\LoggerInterface;
 use Zipkin\Endpoint;
 use Zipkin\Reporters\Http;
-use Zipkin\Samplers\BinarySampler;
 use Zipkin\TracingBuilder;
 use ZipkinOpenTracing\Tracer as ZipkinTracer;
 
@@ -18,25 +17,37 @@ final class ZipkinTracerFactory implements TracerFactory
 {
     private $logger;
     private $agentHostResolver;
+    private $samplerFactory;
 
-    public function __construct(AgentHostResolver $agentHostResolver, LoggerInterface $logger)
-    {
+    public function __construct(
+        AgentHostResolver $agentHostResolver,
+        SamplerFactory $samplerFactory,
+        LoggerInterface $logger
+    ) {
         $this->agentHostResolver = $agentHostResolver;
         $this->logger = $logger;
+        $this->samplerFactory = $samplerFactory;
     }
 
     /**
      * @SuppressWarnings(PHPMD.StaticAccess)
+     * @param mixed $samplerValue
      */
-    public function create(string $projectName, string $agentHost, string $agentPort): Tracer
-    {
+    public function create(
+        string $projectName,
+        string $agentHost,
+        string $agentPort,
+        string $samplerClass,
+        $samplerValue
+    ): Tracer {
         $tracer = new NoopTracer();
 
         try {
             $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $endpoint = Endpoint::create($projectName, gethostbyname($agentHost), null, (int) $agentPort);
             $reporter = new Http();
-            $sampler = BinarySampler::createAsAlwaysSample();
+            $samplerValue = json_decode($samplerValue);
+            $sampler = $this->samplerFactory->createSampler($samplerClass, $samplerValue);
             $tracing = TracingBuilder::create()
                 ->havingLocalEndpoint($endpoint)
                 ->havingSampler($sampler)
