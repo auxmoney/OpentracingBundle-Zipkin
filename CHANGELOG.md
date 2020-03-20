@@ -1,3 +1,16 @@
+# [0.4.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.3.3...v0.4.0) (2020-03-20)
+
+
+### Bug Fixes
+
+* do not create travis builds for tags ([#7](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/7)) ([67c3bd1](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/67c3bd1b661279b64813f1a09605edc3a2e71c35))
+
+
+### Features
+
+* add sampler configuration ([#8](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/8)) ([ec1d5e0](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/ec1d5e0b8dd7ed818de9444fda2ac7992fe3b624))
+* semantic release ([#9](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/9)) ([ee7c5d6](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/ee7c5d6c29643be3e4235bf8bac2f4ba2cd24262))
+
 ### [0.3.3](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.3.2...v0.3.3) (2020-03-06)
 
 
