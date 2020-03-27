@@ -1,3 +1,10 @@
+## [0.4.1](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.4.0...v0.4.1) (2020-03-27)
+
+
+### Bug Fixes
+
+* upgrade core dependency ([#10](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/10)) ([c469c44](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/c469c44c9b4b23e64884340a1dfdbca0c90b755b))
+
 # [0.4.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.3.3...v0.4.0) (2020-03-20)
 
 
