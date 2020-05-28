@@ -1,3 +1,10 @@
+## [0.4.2](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.4.1...v0.4.2) (2020-05-28)
+
+
+### Bug Fixes
+
+* symfony flex bundle extension ([#12](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/12)) ([6251796](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/6251796bd37f4dc970e192eded00885db4404c3d))
+
 ## [0.4.1](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.4.0...v0.4.1) (2020-03-27)
 
 
