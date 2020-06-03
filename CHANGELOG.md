@@ -1,3 +1,10 @@
+# [0.5.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.4.2...v0.5.0) (2020-06-03)
+
+
+### Features
+
+* add trace id header capability ([#13](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/13)) ([5c03130](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/5c03130286b5db2a0df1c7e600216a60fa5d3c8e))
+
 ## [0.4.2](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.4.1...v0.4.2) (2020-05-28)
 
 
