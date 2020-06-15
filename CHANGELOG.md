@@ -1,3 +1,10 @@
+## [0.5.1](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.0...v0.5.1) (2020-06-15)
+
+
+### Bug Fixes
+
+* upgrade dependencies ([43fa49b](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/43fa49b9018db4d4661cd0151e249eb4e4448ac5))
+
 # [0.5.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.4.2...v0.5.0) (2020-06-03)
 
 
