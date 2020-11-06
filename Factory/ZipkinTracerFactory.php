@@ -19,20 +19,20 @@ final class ZipkinTracerFactory implements TracerFactory
     private $agentHostResolver;
     private $samplerFactory;
     private $zipkinUrl;
-    private $zipkinConnectionConfig;
+    private $connectionConfig;
 
     public function __construct(
         AgentHostResolver $agentHostResolver,
         SamplerFactory $samplerFactory,
         LoggerInterface $logger,
         string $zipkinUrl = "http://localhost:9411",
-        array $zipkinConnectionConfig = []
+        array $connectionConfig = []
     ) {
         $this->agentHostResolver = $agentHostResolver;
         $this->logger = $logger;
         $this->samplerFactory = $samplerFactory;
         $this->zipkinUrl = $zipkinUrl;
-        $this->zipkinConnectionConfig = $zipkinConnectionConfig;
+        $this->connectionConfig = $connectionConfig;
     }
 
     /**
@@ -51,7 +51,10 @@ final class ZipkinTracerFactory implements TracerFactory
         try {
             $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $endpoint = Endpoint::create($projectName, gethostbyname($agentHost), null, (int) $agentPort);
-            $reporter = new Http(null, array_merge($this->zipkinConnectionConfig, ['endpoint_url' => $this->zipkinUrl . '/api/v2/spans']));
+            $reporter = new Http(
+                null,
+                array_merge($this->connectionConfig, ['endpoint_url' => $this->zipkinUrl . '/api/v2/spans'])
+            );
             $samplerValue = json_decode($samplerValue);
             $sampler = $this->samplerFactory->createSampler($samplerClass, $samplerValue);
             $tracing = TracingBuilder::create()
