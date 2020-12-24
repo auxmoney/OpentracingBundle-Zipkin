@@ -1,3 +1,10 @@
+## [0.5.2](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.1...v0.5.2) (2020-12-24)
+
+
+### Bug Fixes
+
+* replace Travis with GitHub ([#16](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/16)) ([897d221](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/897d2217d9647e653df4d5bb43bc28475f33ba23))
+
 ## [0.5.1](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.0...v0.5.1) (2020-06-15)
 
 
