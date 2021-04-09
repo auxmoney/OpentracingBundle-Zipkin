@@ -16,7 +16,7 @@ class ZipkinTracingIdTest extends TestCase
     /** @var ZipkinTracingId */
     private $subject;
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
         $this->tracing = $this->prophesize(Tracing::class);

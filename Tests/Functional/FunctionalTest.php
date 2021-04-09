@@ -25,7 +25,7 @@ class FunctionalTest extends TestCase
         self::assertSame('test:zipkin', $spans[0]['name']);
     }
 
-    public function setUp()
+    public function setUp(): void
     {
         parent::setUp();
 
@@ -35,7 +35,7 @@ class FunctionalTest extends TestCase
         sleep(10);
     }
 
-    protected function tearDown()
+    protected function tearDown(): void
     {
         $p = new Process(['git', 'reset', '--hard', 'reset'], 'build/testproject');
         $p->mustRun();
@@ -49,13 +49,13 @@ class FunctionalTest extends TestCase
     {
         $client = new Client();
         $response = $client->get(sprintf('http://localhost:9411/zipkin/api/v2/trace/%s', $traceId));
-        return json_decode($response->getBody()->getContents(), true);
+        return json_decode($response->getBody()->getContents(), true, 512, JSON_THROW_ON_ERROR);
     }
 
     private function setupTestProject(): void
     {
         $filesystem = new Filesystem();
-        $filesystem->mirror(sprintf('Tests/Functional/TestProjectFiles/default/'), 'build/testproject/');
+        $filesystem->mirror('Tests/Functional/TestProjectFiles/default/', 'build/testproject/');
 
         $p = new Process(['composer', 'dump-autoload'], 'build/testproject');
         $p->mustRun();
