@@ -1,3 +1,10 @@
+## [0.5.3](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.2...v0.5.3) (2021-04-09)
+
+
+### Bug Fixes
+
+* drop PHP versions 7.1 and 7.2 ([#20](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/20)) ([ec28875](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/ec288753258bbd573cff5181f1182b0d2c37a2db))
+
 ## [0.5.2](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.1...v0.5.2) (2020-12-24)
 
 
