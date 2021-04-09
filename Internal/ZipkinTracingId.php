@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Auxmoney\OpentracingBundle\Internal;
 
 use Auxmoney\OpentracingBundle\Service\Tracing;
-use Zipkin\Propagation\B3;
 
 class ZipkinTracingId implements TracingId
 {
@@ -19,7 +18,7 @@ class ZipkinTracingId implements TracingId
     public function getAsString(): string
     {
         $context = $this->tracing->injectTracingHeadersIntoCarrier([]);
-        $traceHeaderName = strtolower(B3::TRACE_ID_NAME);
+        $traceHeaderName = 'x-b3-traceid';
         return $context[$traceHeaderName] ?? 'none';
     }
 }

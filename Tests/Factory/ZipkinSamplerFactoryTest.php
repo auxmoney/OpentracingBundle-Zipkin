@@ -13,7 +13,7 @@ class ZipkinSamplerFactoryTest  extends TestCase
 {
     private $subject;
 
-    public function setUp()
+    public function setUp(): void
     {
         $this->subject = new ZipkinSamplerFactory();
     }
@@ -41,8 +41,8 @@ class ZipkinSamplerFactoryTest  extends TestCase
      */
     public function testCreateBinarySamplerWithoutStringValue(): void
     {
-        self::expectException(Exception::class);
-        self::expectExceptionMessage('sampler value for the binary sampler must be an boolean, string given');
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('sampler value for the binary sampler must be an boolean, string given');
         $this->subject->createSampler(BinarySampler::class, 'true');
     }
 
@@ -69,8 +69,8 @@ class ZipkinSamplerFactoryTest  extends TestCase
      */
     public function testCreateUnknownSampler(): void
     {
-        self::expectException(Exception::class);
-        self::expectExceptionMessage('unknown sampler class unknown given');
+        $this->expectException(Exception::class);
+        $this->expectExceptionMessage('unknown sampler class unknown given');
 
         $this->subject->createSampler('unknown', 0.0);
     }
