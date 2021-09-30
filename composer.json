@@ -16,12 +16,18 @@
   "replace": {
     "auxmoney/opentracing-bundle-tracer-implementation": "*"
   },
+  "repositories": [
+    {
+      "type": "vcs",
+      "url": "https://github.com/Rainrider/OpentracingBundle-core"
+    }
+  ],
   "require": {
     "php": "^7.3.27",
     "ext-json": "*",
-    "auxmoney/opentracing-bundle-core": "^0.8",
-    "opentracing/opentracing": "1.0.0-beta5@beta",
-    "jcchavezs/zipkin-opentracing": "^0.2"
+    "auxmoney/opentracing-bundle-core": "dev-update-opentracing@dev",
+    "opentracing/opentracing": "^1.0.1",
+    "jcchavezs/zipkin-opentracing": "^1.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-master",
