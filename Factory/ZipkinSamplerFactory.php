@@ -12,7 +12,7 @@ use Zipkin\Samplers\PercentageSampler;
 final class ZipkinSamplerFactory implements SamplerFactory
 {
     /**
-     * @inheritDoc
+     * {@inheritDoc}
      * @SuppressWarnings(PHPMD.StaticAccess)
      */
     public function createSampler(string $samplerClass, $samplerValue): Sampler
