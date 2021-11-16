@@ -1,3 +1,13 @@
+# [1.0.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.3...v1.0.0) (2021-11-16)
+
+
+* feat!: update core and opentracing to v1  (#23) ([389cfb0](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/389cfb0225841eba9252f2ac7c5c2940c67bcb78)), closes [#23](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/23)
+
+
+### BREAKING CHANGES
+
+* update core and opentracing to v1
+
 ## [0.5.3](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.2...v0.5.3) (2021-04-09)
 
 
