@@ -10,6 +10,7 @@ use Auxmoney\OpentracingBundle\Factory\ZipkinTracerFactory;
 use OpenTracing\NoopTracer;
 use PHPUnit\Framework\TestCase;
 use Prophecy\Argument;
+use Prophecy\PhpUnit\ProphecyTrait;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Zipkin\Samplers\BinarySampler;
@@ -17,6 +18,8 @@ use ZipkinOpenTracing\Tracer;
 
 class ZipkinTracerFactoryTest extends TestCase
 {
+    use ProphecyTrait;
+
     private $samplerFactory;
     private $agentHostResolver;
     private $logger;
