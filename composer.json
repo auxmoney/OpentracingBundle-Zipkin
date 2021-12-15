@@ -21,7 +21,7 @@
     "ext-json": "*",
     "auxmoney/opentracing-bundle-core": "^1.0",
     "opentracing/opentracing": "^1.0.1",
-    "jcchavezs/zipkin-opentracing": "^1.0"
+    "jcchavezs/zipkin-opentracing": "^2.0"
   },
   "require-dev": {
     "roave/security-advisories": "dev-latest",

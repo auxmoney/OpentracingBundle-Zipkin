@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c99e84fae901b449aed5338c02291e49",
+    "content-hash": "2884ccad43f67e00b2d89cace5781b41",
     "packages": [
         {
             "name": "auxmoney/opentracing-bundle-core",
@@ -151,36 +151,33 @@
         },
         {
             "name": "jcchavezs/zipkin-opentracing",
-            "version": "1.0.0",
+            "version": "2.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/jcchavezs/zipkin-php-opentracing.git",
-                "reference": "de92acea67971be2a9f7930e5d37924f377f64cf"
+                "reference": "4196f518877707d6248b40d8edb3f69d173c636b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/jcchavezs/zipkin-php-opentracing/zipball/de92acea67971be2a9f7930e5d37924f377f64cf",
-                "reference": "de92acea67971be2a9f7930e5d37924f377f64cf",
+                "url": "https://api.github.com/repos/jcchavezs/zipkin-php-opentracing/zipball/4196f518877707d6248b40d8edb3f69d173c636b",
+                "reference": "4196f518877707d6248b40d8edb3f69d173c636b",
                 "shasum": ""
             },
             "require": {
                 "opentracing/opentracing": "^1.0.1",
-                "openzipkin/zipkin": "^2.0.2",
-                "php": "~7.1"
+                "openzipkin/zipkin": "3.0.0",
+                "php": ">=7.4 || ^8.0"
             },
             "provide": {
-                "opentracing/opentracing": "dev-master"
+                "opentracing/opentracing": "1.0.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~7.0",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpstan/phpstan": "^0.12.26",
+                "phpunit/phpunit": "^9.0",
                 "squizlabs/php_codesniffer": "3.*"
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "ZipkinOpenTracing\\": "./src/ZipkinOpenTracing/"
@@ -199,9 +196,15 @@
             "description": "A Zipkin bridge with OpenTracing",
             "support": {
                 "issues": "https://github.com/jcchavezs/zipkin-php-opentracing/issues",
-                "source": "https://github.com/jcchavezs/zipkin-php-opentracing/tree/1.0.0"
+                "source": "https://github.com/jcchavezs/zipkin-php-opentracing/tree/2.0.1"
             },
-            "time": "2021-01-19T19:01:00+00:00"
+            "funding": [
+                {
+                    "url": "https://www.paypal.me/jcchavezs",
+                    "type": "paypal"
+                }
+            ],
+            "time": "2021-11-22T09:41:30+00:00"
         },
         {
             "name": "opentracing/opentracing",
@@ -254,45 +257,43 @@
         },
         {
             "name": "openzipkin/zipkin",
-            "version": "2.0.2",
+            "version": "3.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openzipkin/zipkin-php.git",
-                "reference": "f06a8575104af6f5097168a28e7d5f7263ca4eec"
+                "reference": "d981ecfbe77a3dd430732575474eceb53e38f26a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openzipkin/zipkin-php/zipball/f06a8575104af6f5097168a28e7d5f7263ca4eec",
-                "reference": "f06a8575104af6f5097168a28e7d5f7263ca4eec",
+                "url": "https://api.github.com/repos/openzipkin/zipkin-php/zipball/d981ecfbe77a3dd430732575474eceb53e38f26a",
+                "reference": "d981ecfbe77a3dd430732575474eceb53e38f26a",
                 "shasum": ""
             },
             "require": {
                 "ext-curl": "*",
-                "php": "^7.1",
+                "php": "^7.4 || ^8.0",
                 "psr/http-message": "~1.0",
-                "psr/log": "^1.0"
+                "psr/log": "^1.0 || ^2.0 || ^3.0"
             },
             "require-dev": {
-                "guzzlehttp/psr7": "^1.6",
+                "ext-mysqli": "*",
                 "jcchavezs/httptest": "~0.2",
-                "middlewares/fast-route": "^1.2.1",
-                "middlewares/request-handler": "^1.4.0",
-                "phpstan/phpstan": "~0.12.28",
-                "phpunit/phpunit": "~7.5.20",
+                "middlewares/fast-route": "^2.0",
+                "middlewares/request-handler": "^2.0",
+                "nyholm/psr7": "^1.4",
+                "phpspec/prophecy-phpunit": "^2.0",
+                "phpstan/phpstan": "^0.12.26",
+                "phpunit/phpunit": "~9",
                 "psr/http-client": "^1.0",
                 "psr/http-server-middleware": "^1.0",
                 "squizlabs/php_codesniffer": "3.*"
             },
             "suggest": {
+                "ext-mysqli": "Allows to use mysqli instrumentation.",
                 "psr/http-client": "Allows to instrument HTTP clients following PSR18.",
                 "psr/http-server-middleware": "Allows to instrument HTTP servers via middlewares following PSR15."
             },
             "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.0.x-dev"
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "Zipkin\\": "./src/Zipkin/"
@@ -326,9 +327,9 @@
             ],
             "support": {
                 "issues": "https://github.com/openzipkin/zipkin-php/issues",
-                "source": "https://github.com/openzipkin/zipkin-php/tree/2.0.2"
+                "source": "https://github.com/openzipkin/zipkin-php/tree/3.0.0"
             },
-            "time": "2020-11-24T09:47:50+00:00"
+            "time": "2021-11-18T09:03:17+00:00"
         },
         {
             "name": "psr/container",
