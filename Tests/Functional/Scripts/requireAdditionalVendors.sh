@@ -3,9 +3,13 @@ shopt -s extglob
 
 cd build/testproject/
 composer remove auxmoney/opentracing-bundle-jaeger
-composer require auxmoney/opentracing-bundle-zipkin
-rm -fr vendor/auxmoney/opentracing-bundle-zipkin/*
-cp -r ../../!(build|vendor) vendor/auxmoney/opentracing-bundle-zipkin
+VENDOR_VERSION=""
+CURRENT_BRANCH=${GITHUB_REF#refs/heads/}
+if [[ $CURRENT_BRANCH -ne "master" ]]; then
+    composer config minimum-stability dev
+    VENDOR_VERSION=":dev-${CURRENT_BRANCH}"
+fi
+composer require auxmoney/opentracing-bundle-zipkin${VENDOR_VERSION}
 composer dump-autoload
 cd ../../
 
