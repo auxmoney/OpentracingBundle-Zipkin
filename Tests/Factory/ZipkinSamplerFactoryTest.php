@@ -2,8 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Auxmoney\OpentracingBundle\Factory;
+namespace Auxmoney\OpentracingBundle\Tests\Factory;
 
+use Auxmoney\OpentracingBundle\Factory\ZipkinSamplerFactory;
 use Exception;
 use PHPUnit\Framework\TestCase;
 use Zipkin\Samplers\BinarySampler;
