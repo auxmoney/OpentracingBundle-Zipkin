@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v1.0.0...v1.1.0) (2021-12-16)
+
+
+### Features
+
+* support PHP 8 ([#25](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/25)) ([d07bec1](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/d07bec1a418a77f3f4d0ece23512d271ad92d708))
+
 # [1.0.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v0.5.3...v1.0.0) (2021-11-16)
 
 
