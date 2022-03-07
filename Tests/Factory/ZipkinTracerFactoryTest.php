@@ -23,12 +23,12 @@ class ZipkinTracerFactoryTest extends TestCase
     private $samplerFactory;
     private $agentHostResolver;
     private $logger;
-    private $projectName;
-    private $agentHost;
-    private $agentPort;
-    private $subject;
-    private $samplerClass;
-    private $samplerValue;
+    private string $projectName;
+    private string $agentHost;
+    private string $agentPort;
+    private ZipkinTracerFactory $subject;
+    private string $samplerClass;
+    private string $samplerValue;
 
     public function setUp(): void
     {

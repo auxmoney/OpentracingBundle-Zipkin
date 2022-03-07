@@ -15,9 +15,9 @@ use ZipkinOpenTracing\Tracer as ZipkinTracer;
 
 final class ZipkinTracerFactory implements TracerFactory
 {
-    private $logger;
-    private $agentHostResolver;
-    private $samplerFactory;
+    private LoggerInterface $logger;
+    private AgentHostResolver $agentHostResolver;
+    private SamplerFactory $samplerFactory;
 
     public function __construct(
         AgentHostResolver $agentHostResolver,

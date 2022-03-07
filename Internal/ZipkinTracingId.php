@@ -8,7 +8,7 @@ use Auxmoney\OpentracingBundle\Service\Tracing;
 
 class ZipkinTracingId implements TracingId
 {
-    private $tracing;
+    private Tracing $tracing;
 
     public function __construct(Tracing $tracing)
     {
