@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v1.1.0...v1.2.0) (2022-03-26)
+
+
+### Features
+
+* support Symfony 6 ([#26](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/26)) ([b01da5e](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/b01da5ed83e7ef7b00013e0b94482f646137e252))
+
 # [1.1.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v1.0.0...v1.1.0) (2021-12-16)
 
 
