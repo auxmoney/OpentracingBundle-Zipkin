@@ -12,7 +12,7 @@ use Zipkin\Samplers\PercentageSampler;
 
 class ZipkinSamplerFactoryTest  extends TestCase
 {
-    private $subject;
+    private ZipkinSamplerFactory $subject;
 
     public function setUp(): void
     {

@@ -16,8 +16,7 @@ class ZipkinTracingIdTest extends TestCase
 
     /** @var Tracing|ObjectProphecy */
     private $tracing;
-    /** @var ZipkinTracingId */
-    private $subject;
+    private ZipkinTracingId $subject;
 
     public function setUp(): void
     {
