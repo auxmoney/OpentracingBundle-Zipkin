@@ -45,7 +45,7 @@ final class ZipkinTracerFactory implements TracerFactory
         try {
             $this->agentHostResolver->ensureAgentHostIsResolvable($agentHost);
             $endpoint = Endpoint::create($projectName, gethostbyname($agentHost), null, (int) $agentPort);
-            $reporter = new Http();
+            $reporter = $this->createReporter($endpoint);
             $samplerValue = json_decode($samplerValue);
             $sampler = $this->samplerFactory->createSampler($samplerClass, $samplerValue);
             $tracing = TracingBuilder::create()
@@ -60,5 +60,18 @@ final class ZipkinTracerFactory implements TracerFactory
         }
 
         return $tracer;
+    }
+
+    /**
+     * @param Endpoint $endpoint
+     * @return Http
+     */
+    private function createReporter(Endpoint $endpoint): Http
+    {
+        return new Http(
+            [
+                'endpoint_url' => sprintf('http://%s:%d/api/v2/spans', $endpoint->getIpv4(), $endpoint->getPort()),
+            ]
+        );
     }
 }
