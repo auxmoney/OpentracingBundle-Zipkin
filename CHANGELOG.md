@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v1.2.2...v1.2.3) (2023-04-28)
+
+
+### Bug Fixes
+
+* update supported PHP and Symfony versions + fix composer behaviour + remove coveralls integration ([#36](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/36)) ([556965d](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/556965d788e86d4fed2349fa0ed450e117239f07))
+
 ## [1.2.2](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v1.2.1...v1.2.2) (2022-08-23)
 
 
