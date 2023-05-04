@@ -32,3 +32,4 @@ If you cannot change environment variables in your project, you can alternativel
     * Class: `Zipkin\Samplers\PercentageSampler` 
     * possible values: Rate min `'0.00'` - max `'1.00'`
     * Description: you activate the tracing for the given rate
+
