@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v1.2.3...v1.3.0) (2023-05-04)
+
+
+### Features
+
+* Configure Http reporter with $agentHost ([#34](https://github.com/auxmoney/OpentracingBundle-Zipkin/issues/34)) ([caa4aed](https://github.com/auxmoney/OpentracingBundle-Zipkin/commit/caa4aedebf9b8863646358a133dddc11b7610e73))
+
 ## [1.2.3](https://github.com/auxmoney/OpentracingBundle-Zipkin/compare/v1.2.2...v1.2.3) (2023-04-28)
 
 
