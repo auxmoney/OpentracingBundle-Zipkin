@@ -68,6 +68,27 @@ class ZipkinTracerFactoryTest extends TestCase
         );
     }
 
+    public function testCreateSuccessWithAlternativeHost(): void
+    {
+        $host = '192.168.0.1';
+        $this->agentHostResolver->ensureAgentHostIsResolvable($host)->shouldBeCalled();
+        $this->logger->warning(Argument::type('string'))->shouldNotBeCalled();
+        $this->samplerFactory->createSampler($this->samplerClass, true)->shouldBeCalled()
+            ->willReturn(BinarySampler::createAsAlwaysSample());
+
+        $tracer = $this->subject->create(
+            $this->projectName,
+            $host,
+            $this->agentPort,
+            $this->samplerClass,
+            $this->samplerValue
+        );
+
+        $options = $this->extractReporterOptionsByReflection($tracer);
+
+        self::assertSame(sprintf('http://%s:9411/api/v2/spans', $host), $options['endpoint_url']);
+    }
+
     public function testCreateResolvingFailed(): void
     {
         $this->agentHostResolver->ensureAgentHostIsResolvable('localhost')->shouldBeCalled()->willThrow(
@@ -104,5 +125,29 @@ class ZipkinTracerFactoryTest extends TestCase
                 $this->samplerValue
             )
         );
+    }
+
+    /**
+     * @return array{endpoint_url: string}
+     * @throws \ReflectionException
+     */
+    private function extractReporterOptionsByReflection(\OpenTracing\Tracer $tracer)
+    {
+        $tracerRef = new \ReflectionClass($tracer);
+        $tracerProperty = $tracerRef->getProperty('tracer');
+        $tracerProperty->setAccessible(true);
+        $ottTracer = $tracerProperty->getValue($tracer);
+        $ottTracerRef = new \ReflectionClass($ottTracer);
+        $recorderProperty = $ottTracerRef->getProperty('recorder');
+        $recorderProperty->setAccessible(true);
+        $recorder = $recorderProperty->getValue($ottTracer);
+        $recorderRef = new \ReflectionClass($recorder);
+        $reporterProperty = $recorderRef->getProperty('reporter');
+        $reporterProperty->setAccessible(true);
+        $reporter = $reporterProperty->getValue($recorder);
+        $reporterRef = new \ReflectionClass($reporter);
+        $optionsProperty = $reporterRef->getProperty('options');
+        $optionsProperty->setAccessible(true);
+        return $optionsProperty->getValue($reporter);
     }
 }
