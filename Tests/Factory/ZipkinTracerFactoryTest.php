@@ -134,12 +134,20 @@ class ZipkinTracerFactoryTest extends TestCase
     private function extractReporterOptionsByReflection(\OpenTracing\Tracer $tracer)
     {
         $tracerRef = new \ReflectionClass($tracer);
-        $ottTracer = $tracerRef->getProperty('tracer')->getValue($tracer);
+        $tracerProperty = $tracerRef->getProperty('tracer');
+        $tracerProperty->setAccessible(true);
+        $ottTracer = $tracerProperty->getValue($tracer);
         $ottTracerRef = new \ReflectionClass($ottTracer);
-        $recorder = $ottTracerRef->getProperty('recorder')->getValue($ottTracer);
+        $recorderProperty = $ottTracerRef->getProperty('recorder');
+        $recorderProperty->setAccessible(true);
+        $recorder = $recorderProperty->getValue($ottTracer);
         $recorderRef = new \ReflectionClass($recorder);
-        $reporter = $recorderRef->getProperty('reporter')->getValue($recorder);
+        $reporterProperty = $recorderRef->getProperty('reporter');
+        $reporterProperty->setAccessible(true);
+        $reporter = $reporterProperty->getValue($recorder);
         $reporterRef = new \ReflectionClass($reporter);
-        return $reporterRef->getProperty('options')->getValue($reporter);
+        $optionsProperty = $reporterRef->getProperty('options');
+        $optionsProperty->setAccessible(true);
+        return $optionsProperty->getValue($reporter);
     }
 }
